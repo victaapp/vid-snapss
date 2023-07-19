@@ -24,7 +24,7 @@ const VideoList = () => {
   const [merged, setmerged] = React.useState(false)
 
   React.useEffect(() => {
-    axios.get('http://16.170.246.70:8000/video/videos/')
+    axios.get('http://16.170.246.70/video/videos/')
       .then(function (response) {
         setVideoList(response.data)
         console.log(response);
@@ -37,7 +37,7 @@ const VideoList = () => {
   function mergeSubtitle(e) {
     let subtitle_id = e.target.previousElementSibling.innerHTML
     let video_id = e.target.previousElementSibling.previousElementSibling.innerHTML
-    axios.get(`http://16.170.246.70:8000/video/videos/${video_id}/?lang=${subtitle_id}`)
+    axios.get(`http://16.170.246.70/video/videos/${video_id}/?lang=${subtitle_id}`)
       .then(function (response) {
         setVideoList(response.data)
         console.log(response);
