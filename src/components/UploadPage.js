@@ -39,7 +39,7 @@ const UploadPage = () => {
   function submitSubtitles(e) {
     if (subtitles.length > 0) {
       subtitles.forEach((sub) => {
-        axios.post('http://16.170.246.70:8000/video/subtitles/', sub)
+        axios.post('http://16.170.246.70/video/subtitles/', sub)
           .then(function (response) {
             console.log(response);
             alert("Subtitle uploaded!")
@@ -56,7 +56,7 @@ const UploadPage = () => {
     let vidFormOne = new FormData();
     vidFormOne.append('video_file', video)
     vidFormOne.append('title', title)
-    axios.post('http://16.170.246.70:8000/video/videos/', vidFormOne)
+    axios.post('http://16.170.246.70/video/videos/', vidFormOne)
       .then(function (response) {
         setsubmited(response.data.id)
         console.log(response);
